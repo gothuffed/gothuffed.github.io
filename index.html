@@ -12,7 +12,6 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
-        /* Тёмная гамма в точности как на референсе */
         body {
             background-color: #121212;
             color: #b0b0b0;
@@ -22,7 +21,6 @@
             margin: 0 auto;
         }
 
-        /* Заголовки */
         h1 {
             color: #ffffff;
             font-size: 2.5rem;
@@ -31,13 +29,12 @@
         }
 
         .subtitle {
-            color: #8cc63f; /* Неоново-салатовый акцент */
+            color: #8cc63f;
             font-family: 'Courier New', Courier, monospace;
             font-size: 1.1rem;
             margin-bottom: 25px;
         }
 
-        /* Терминальный стиль для заголовков разделов */
         h2 {
             color: #ffffff;
             font-family: 'Courier New', Courier, monospace;
@@ -60,7 +57,6 @@
             margin-bottom: 30px;
         }
 
-        /* Кнопки в стиле сайта-примера */
         .btn-group {
             display: flex;
             gap: 15px;
@@ -98,7 +94,6 @@
             color: #8cc63f;
         }
 
-        /* Сетка проектов */
         .projects-list {
             display: flex;
             flex-direction: column;
@@ -136,7 +131,6 @@
             margin-bottom: 20px;
         }
 
-        /* Теги навыков */
         .skills-container {
             display: flex;
             flex-wrap: wrap;
@@ -166,68 +160,71 @@
 </head>
 <body>
 
-    <!-- Шапка -->
+
     <header>
         <h1>Gothuffed</h1>
-        <div class="subtitle">Software Developer</div>
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" 
+     alt="GitHub" 
+     style="width: 32px; height: 32px; filter: invert(100%); vertical-align: middle; margin-left: 12px;">
+        
+        <div class="subtitle">Backend Developer</div>
         
         <p class="bio">
-            Начинающий разработчик, сфокусированный на бэкенде, автоматизации и создании Telegram-ботов. 
-            Изучаю построение архитектуры приложений, работу с базами данных и интеграцию REST API.
+            Начинающий разработчик. Интересуюсь бэкенд-разработкой: пишу простые скрипты на Python, разбираюсь с базами данных и тем, как устроены веб-приложения.
+            Сейчас в процессе изучения основ, горю желанием научиться писать чистый и рабочий код.
+            В перспективе хочу углубиться в создание надёжных серверных решений.
         </p>
 
         <div class="btn-group">
             <a href="https://github.com/gothuffed" target="_blank" class="btn btn-primary">GitHub</a>
-            <a href="https://t.me/" target="_blank" class="btn btn-outline">Telegram</a>
         </div>
     </header>
 
-    <!-- Секция Навыки -->
     <section>
         <h2>Skills.md</h2>
         <div class="skills-container">
             <span class="skill-tag">Python</span>
             <span class="skill-tag">Git / GitHub</span>
-            <span class="skill-tag">Telegram Bot API</span>
-            <span class="skill-tag">SQLite</span>
-            <span class="skill-tag">REST API</span>
-            <span class="skill-tag">JSON / HTTP</span>
+            <span class="skill-tag">REST API (в процессе)</span>
+            <span class="skill-tag">SQLite (основы)</span>
         </div>
     </section>
 
-    <!-- Секция Проекты -->
     <section>
         <h2>Projects.md</h2>
         <div class="projects-list">
 
-            <!-- Проект 1 -->
             <div class="project-card">
-                <h3>Telegram Bot // [Название первого бота]</h3>
-                <div class="project-tech">Python // Aiogram // SQLite</div>
+                <h3>Task Tracker // To-Do с прогрессом</h3>
+                <div class="project-tech">Python // Flask // SQLite // HTML/CSS</div>
                 <p class="project-desc">
-                    Интерактивный Telegram-бот для автоматизации повседневных задач. Реализована обработка команд, работа с локальной базой данных и пользовательские сценарии.
+                    Веб-приложение для управления задачами с визуальным прогресс-баром. 
+                    Позволяет добавлять, отмечать выполненные задачи и отслеживать общий прогресс. 
+                    Данные хранятся в SQLite. Учебный проект для отработки CRUD-операций.
                 </p>
-                <a href="https://github.com/gothuffed" target="_blank" class="btn btn-outline">View Source</a>
+                <a href="#" class="btn btn-outline">В разработке</a>
             </div>
 
-            <!-- Проект 2 -->
             <div class="project-card">
                 <h3>Data Scraper Service</h3>
-                <div class="project-tech">Python // Requests // BeautifulSoup</div>
+    <div class="project-tech">Python // Requests // JSON</div>
                 <p class="project-desc">
-                    Скрипт для парсинга и структурирования данных с веб-ресурсов. Автоматически собирает информацию и сохраняет её в удобном формате.
+                    Скрипт для получения данных с открытых API (погода/курс валют). 
+                    Выполняет HTTP-запросы, обрабатывает ответы в формате JSON 
+                    и выводит структурированную информацию. Учебный проект.
                 </p>
-                <a href="https://github.com/gothuffed" target="_blank" class="btn btn-outline">View Source</a>
+                <a href="#" class="btn btn-outline">В разработке</a>
             </div>
 
-            <!-- Проект 3 -->
             <div class="project-card">
                 <h3>REST API Microservice</h3>
                 <div class="project-tech">Python // FastAPI // JSON</div>
                 <p class="project-desc">
-                    Легковесный RESTful API сервис для обработки пользовательских запросов и выдачи данных в формате JSON.
+                    Учебный RESTful API сервис с базовыми эндпоинтами для работы с данными. 
+                    Реализована маршрутизация запросов и возврат ответов в формате JSON. 
+                    Изучаю основы построения API.
                 </p>
-                <a href="https://github.com/gothuffed" target="_blank" class="btn btn-outline">View Source</a>
+                <a href="#" class="btn btn-outline">В разработке</a>
             </div>
 
         </div>
