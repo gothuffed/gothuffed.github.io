@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Портфолио | Backend Developer</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 1px solid #334155;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #38bdf8;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #94a3b8;
+        }
+
+        section {
+            margin: 40px 0;
+        }
+
+        h2 {
+            color: #38bdf8;
+            border-bottom: 2px solid #38bdf8;
+            display: inline-block;
+            margin-bottom: 20px;
+            padding-bottom: 5px;
+        }
+
+        .about p {
+            color: #cbd5e1;
+            font-size: 1.1rem;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            list-style: none;
+        }
+
+        .skills-list li {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: #38bdf8;
+            font-size: 0.95rem;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .project-card h3 {
+            color: #f1f5f9;
+            margin-bottom: 10px;
+        }
+
+        .project-card p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .project-tech {
+            font-size: 0.85rem;
+            color: #38bdf8;
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            display: inline-block;
+            text-align: center;
+            background-color: #0284c7;
+            color: #fff;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .project-link:hover {
+            background-color: #0369a1;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            border-top: 1px solid #334155;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Junior Backend Developer</h1>
+        <p class="subtitle">Портфолио проектов и начинающего разработчика</p>
+    </header>
+
+    <section class="about">
+        <h2>О себе</h2>
+        <p>Увлекаюсь бэкенд-разработкой, проектированием алгоритмов и ботов. Изучаю работу с базами данных, архитектуру асинхронных приложений и работу с API. Стремлюсь создавать чистый, поддерживаемый и полезный код.</p>
+    </section>
+
+    <section class="skills">
+        <h2>Навыки & Технологии</h2>
+        <ul class="skills-list">
+            <li>Python</li>
+            <li>Git / GitHub</li>
+            <li>Telegram Bot API</li>
+            <li>SQLite / SQL</li>
+            <li>REST API</li>
+            <li>HTML & CSS (База)</li>
+        </ul>
+    </section>
+
+    <section class="projects">
+        <h2>Проекты</h2>
+        <div class="projects-grid">
+            
+            <!-- Карточка Проекта 1 -->
+            <div class="project-card">
+                <div>
+                    <h3>Проект 1: [Название появится тут]</h3>
+                    <p>Краткое описание того, какую проблему решает этот проект или бот.</p>
+                    <p class="project-tech">Стек: Python, Telebot, SQLite</p>
+                </div>
+                <a href="https://github.com/gothuffed" class="project-link" target="_blank">Исходный код на GitHub</a>
+            </div>
+
+            <!-- Карточка Проекта 2 -->
+            <div class="project-card">
+                <div>
+                    <h3>Проект 2: [Название появится тут]</h3>
+                    <p>Описание второго проекта, например, авто-парсер данных или утилита.</p>
+                    <p class="project-tech">Стек: Python, Requests, BeautifulSoup</p>
+                </div>
+                <a href="https://github.com/gothuffed" class="project-link" target="_blank">Исходный код на GitHub</a>
+            </div>
+
+            <!-- Карточка Проекта 3 -->
+            <div class="project-card">
+                <div>
+                    <h3>Проект 3: [Название появится тут]</h3>
+                    <p>Описание третьего проекта, например, легкий REST API сервис.</p>
+                    <p class="project-tech">Стек: Python, FastAPI / Flask</p>
+                </div>
+                <a href="https://github.com/gothuffed" class="project-link" target="_blank">Исходный код на GitHub</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Связь со мной: <a href="https://t.me/" target="_blank">Telegram</a> | GitHub: <a href="https://github.com/gothuffed" target="_blank">gothuffed</a></p>
+    </footer>
+
+</body>
+</html>
