@@ -3,200 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Портфолио | Backend Developer</title>
+    <title>Gothuffed | Backend Developer</title>
     <style>
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
+        /* Тёмная гамма в точности как на референсе */
         body {
-            background-color: #0f172a;
-            color: #f8fafc;
+            background-color: #121212;
+            color: #b0b0b0;
             line-height: 1.6;
-            padding: 20px;
+            padding: 40px 20px;
             max-width: 900px;
             margin: 0 auto;
         }
 
-        header {
-            text-align: center;
-            padding: 40px 0;
-            border-bottom: 1px solid #334155;
-        }
-
+        /* Заголовки */
         h1 {
+            color: #ffffff;
             font-size: 2.5rem;
-            color: #38bdf8;
-            margin-bottom: 10px;
+            font-weight: 700;
+            margin-bottom: 5px;
         }
 
         .subtitle {
-            font-size: 1.2rem;
-            color: #94a3b8;
-        }
-
-        section {
-            margin: 40px 0;
-        }
-
-        h2 {
-            color: #38bdf8;
-            border-bottom: 2px solid #38bdf8;
-            display: inline-block;
-            margin-bottom: 20px;
-            padding-bottom: 5px;
-        }
-
-        .about p {
-            color: #cbd5e1;
+            color: #8cc63f; /* Неоново-салатовый акцент */
+            font-family: 'Courier New', Courier, monospace;
             font-size: 1.1rem;
+            margin-bottom: 25px;
         }
 
-        .skills-list {
+        /* Терминальный стиль для заголовков разделов */
+        h2 {
+            color: #ffffff;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.8rem;
+            margin: 50px 0 25px 0;
             display: flex;
+            align-items: center;
+        }
+
+        h2::before {
+            content: "~/";
+            color: #8cc63f;
+            margin-right: 8px;
+        }
+
+        .bio {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        /* Кнопки в стиле сайта-примера */
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
             flex-wrap: wrap;
-            gap: 10px;
-            list-style: none;
         }
 
-        .skills-list li {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            padding: 8px 16px;
-            border-radius: 20px;
-            color: #38bdf8;
+        .btn {
+            display: inline-block;
+            padding: 10px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
             font-size: 0.95rem;
+            transition: all 0.2s ease;
         }
 
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
+        .btn-primary {
+            background-color: #8cc63f;
+            color: #121212;
+        }
+
+        .btn-primary:hover {
+            background-color: #a2db54;
+        }
+
+        .btn-outline {
+            background-color: #1e1e1e;
+            color: #ffffff;
+            border: 1px solid #333333;
+        }
+
+        .btn-outline:hover {
+            border-color: #8cc63f;
+            color: #8cc63f;
+        }
+
+        /* Сетка проектов */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
         }
 
         .project-card {
-            background-color: #1e293b;
-            border: 1px solid #334155;
-            border-radius: 8px;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            background-color: #181818;
+            border: 1px solid #282828;
+            border-radius: 10px;
+            padding: 25px;
+            transition: border-color 0.2s;
+        }
+
+        .project-card:hover {
+            border-color: #383838;
         }
 
         .project-card h3 {
-            color: #f1f5f9;
+            color: #ffffff;
+            font-size: 1.4rem;
             margin-bottom: 10px;
         }
 
-        .project-card p {
-            color: #94a3b8;
-            font-size: 0.95rem;
-            margin-bottom: 15px;
-        }
-
         .project-tech {
+            font-family: 'Courier New', Courier, monospace;
+            color: #8cc63f;
             font-size: 0.85rem;
-            color: #38bdf8;
             margin-bottom: 15px;
         }
 
-        .project-link {
-            display: inline-block;
-            text-align: center;
-            background-color: #0284c7;
-            color: #fff;
-            text-decoration: none;
-            padding: 8px 12px;
-            border-radius: 5px;
-            font-weight: bold;
-            transition: background 0.2s;
+        .project-desc {
+            color: #999999;
+            font-size: 1rem;
+            margin-bottom: 20px;
         }
 
-        .project-link:hover {
-            background-color: #0369a1;
+        /* Теги навыков */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
-        footer {
-            text-align: center;
-            padding: 30px 0;
-            border-top: 1px solid #334155;
-            color: #64748b;
+        .skill-tag {
+            background-color: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            color: #cccccc;
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-family: 'Courier New', Courier, monospace;
             font-size: 0.9rem;
         }
 
-        footer a {
-            color: #38bdf8;
-            text-decoration: none;
+        footer {
+            margin-top: 80px;
+            padding-top: 20px;
+            border-top: 1px solid #222222;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #555555;
+            font-family: 'Courier New', Courier, monospace;
         }
     </style>
 </head>
 <body>
 
+    <!-- Шапка -->
     <header>
-        <h1>Junior Backend Developer</h1>
-        <p class="subtitle">Портфолио проектов и начинающего разработчика</p>
+        <h1>Gothuffed</h1>
+        <div class="subtitle">Software Developer</div>
+        
+        <p class="bio">
+            Начинающий разработчик, сфокусированный на бэкенде, автоматизации и создании Telegram-ботов. 
+            Изучаю построение архитектуры приложений, работу с базами данных и интеграцию REST API.
+        </p>
+
+        <div class="btn-group">
+            <a href="https://github.com/gothuffed" target="_blank" class="btn btn-primary">GitHub</a>
+            <a href="https://t.me/" target="_blank" class="btn btn-outline">Telegram</a>
+        </div>
     </header>
 
-    <section class="about">
-        <h2>О себе</h2>
-        <p>Увлекаюсь бэкенд-разработкой, проектированием алгоритмов и ботов. Изучаю работу с базами данных, архитектуру асинхронных приложений и работу с API. Стремлюсь создавать чистый, поддерживаемый и полезный код.</p>
+    <!-- Секция Навыки -->
+    <section>
+        <h2>Skills.md</h2>
+        <div class="skills-container">
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Git / GitHub</span>
+            <span class="skill-tag">Telegram Bot API</span>
+            <span class="skill-tag">SQLite</span>
+            <span class="skill-tag">REST API</span>
+            <span class="skill-tag">JSON / HTTP</span>
+        </div>
     </section>
 
-    <section class="skills">
-        <h2>Навыки & Технологии</h2>
-        <ul class="skills-list">
-            <li>Python</li>
-            <li>Git / GitHub</li>
-            <li>Telegram Bot API</li>
-            <li>SQLite / SQL</li>
-            <li>REST API</li>
-            <li>HTML & CSS (База)</li>
-        </ul>
-    </section>
+    <!-- Секция Проекты -->
+    <section>
+        <h2>Projects.md</h2>
+        <div class="projects-list">
 
-    <section class="projects">
-        <h2>Проекты</h2>
-        <div class="projects-grid">
-            
-            <!-- Карточка Проекта 1 -->
+            <!-- Проект 1 -->
             <div class="project-card">
-                <div>
-                    <h3>Проект 1: [Название появится тут]</h3>
-                    <p>Краткое описание того, какую проблему решает этот проект или бот.</p>
-                    <p class="project-tech">Стек: Python, Telebot, SQLite</p>
-                </div>
-                <a href="https://github.com/gothuffed" class="project-link" target="_blank">Исходный код на GitHub</a>
+                <h3>Telegram Bot // [Название первого бота]</h3>
+                <div class="project-tech">Python // Aiogram // SQLite</div>
+                <p class="project-desc">
+                    Интерактивный Telegram-бот для автоматизации повседневных задач. Реализована обработка команд, работа с локальной базой данных и пользовательские сценарии.
+                </p>
+                <a href="https://github.com/gothuffed" target="_blank" class="btn btn-outline">View Source</a>
             </div>
 
-            <!-- Карточка Проекта 2 -->
+            <!-- Проект 2 -->
             <div class="project-card">
-                <div>
-                    <h3>Проект 2: [Название появится тут]</h3>
-                    <p>Описание второго проекта, например, авто-парсер данных или утилита.</p>
-                    <p class="project-tech">Стек: Python, Requests, BeautifulSoup</p>
-                </div>
-                <a href="https://github.com/gothuffed" class="project-link" target="_blank">Исходный код на GitHub</a>
+                <h3>Data Scraper Service</h3>
+                <div class="project-tech">Python // Requests // BeautifulSoup</div>
+                <p class="project-desc">
+                    Скрипт для парсинга и структурирования данных с веб-ресурсов. Автоматически собирает информацию и сохраняет её в удобном формате.
+                </p>
+                <a href="https://github.com/gothuffed" target="_blank" class="btn btn-outline">View Source</a>
             </div>
 
-            <!-- Карточка Проекта 3 -->
+            <!-- Проект 3 -->
             <div class="project-card">
-                <div>
-                    <h3>Проект 3: [Название появится тут]</h3>
-                    <p>Описание третьего проекта, например, легкий REST API сервис.</p>
-                    <p class="project-tech">Стек: Python, FastAPI / Flask</p>
-                </div>
-                <a href="https://github.com/gothuffed" class="project-link" target="_blank">Исходный код на GitHub</a>
+                <h3>REST API Microservice</h3>
+                <div class="project-tech">Python // FastAPI // JSON</div>
+                <p class="project-desc">
+                    Легковесный RESTful API сервис для обработки пользовательских запросов и выдачи данных в формате JSON.
+                </p>
+                <a href="https://github.com/gothuffed" target="_blank" class="btn btn-outline">View Source</a>
             </div>
 
         </div>
     </section>
 
     <footer>
-        <p>Связь со мной: <a href="https://t.me/" target="_blank">Telegram</a> | GitHub: <a href="https://github.com/gothuffed" target="_blank">gothuffed</a></p>
+        <p>Built with HTML & CSS. Hosted on GitHub Pages.</p>
     </footer>
 
 </body>
